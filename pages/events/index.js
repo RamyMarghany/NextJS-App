@@ -3,11 +3,11 @@ import { useRouter } from "next/router";
 
 import EventsList from "../../components/events/events-list";
 import EventsSearch from "../../components/events/events-search";
-import { getAllEvents, getFilteredEvents } from "../../data/dummy-data";
+import { getAllEvents } from "../../helpers/api-util";
 
-const AllEventsPage = () => {
+const AllEventsPage = (props) => {
   const router = useRouter();
-  const allEvents = getAllEvents();
+  const allEvents = props.events;
   const findEventHandler = (year, month) => {
     const eventPath = `events/${year}/${month}`;
     router.push(eventPath);
@@ -19,5 +19,15 @@ const AllEventsPage = () => {
     </>
   );
 };
+
+export async function getStaticProps() {
+  const events = await getAllEvents();
+  return {
+    props: {
+      events: events,
+    },
+    revalidate: 60,
+  };
+}
 
 export default AllEventsPage;

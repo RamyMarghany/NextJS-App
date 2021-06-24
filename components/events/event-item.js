@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import Button from "../ui/button";
 // Icons
 import AddressIcon from "../ui/icons/address-icon";
@@ -17,7 +19,8 @@ const EventItem = (props) => {
 
   return (
     <li className={classes.item}>
-      <img src={"/" + image} alt={title} />
+      {/* Image NextComponent optimise the image by creating many images dimensions on the fly for many different devices, and caches to use it if another device with the same screen size request them again, change the type of the image to let each browser using its best type, like chrome use webp imag type, plus it implements the image inside the application on lazy-load approach which it means, only download the image if it's needed  */}
+      <Image src={"/" + image} alt={title} width={250} height={160} />
       <div className={classes.content}>
         <div className={classes.summary}>
           <h2>{title}</h2>
