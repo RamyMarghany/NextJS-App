@@ -5,6 +5,7 @@ import { getEventById, getFeaturedEvents } from "../../helpers/api-util";
 import EventSummary from "../../components/event-detail/event-summary";
 import EventLogistics from "../../components/event-detail/event-logistics";
 import EventContent from "../../components/event-detail/event-content";
+import Comments from "../../components/input/comments";
 
 const Event = (props) => {
   const { event } = props;
@@ -18,11 +19,12 @@ const Event = (props) => {
             date={event.date}
             address={event.location}
             image={event.image}
-            imagAlt={event.title}
+            imageAlt={event.title}
           />
           <EventContent>
             <p>{event.description}</p>
           </EventContent>
+          <Comments eventId={event.id} />
         </>
       ) : (
         <p>no event found!</p>
