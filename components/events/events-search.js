@@ -1,10 +1,14 @@
 // Module
 import { useRef } from "react";
 
+// Components
 import Button from "../ui/button";
+
+// Styles
 import classes from "./events-search.module.css";
 
 const EventsSearch = (props) => {
+  // Input Element connections
   const yearInputRef = useRef();
   const monthInputRef = useRef();
 

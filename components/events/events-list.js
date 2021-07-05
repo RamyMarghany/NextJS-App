@@ -1,4 +1,7 @@
+// Components
 import EventItem from "./event-item";
+
+// Styles
 import classes from "./events-list.module.css";
 
 const EventsList = (props) => {

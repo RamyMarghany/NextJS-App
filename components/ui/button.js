@@ -1,5 +1,7 @@
+// Module
 import Link from "next/link";
 
+// Styles
 import classes from "./button.module.css";
 
 const Button = (props) => {

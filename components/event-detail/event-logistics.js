@@ -1,13 +1,18 @@
+// Module
 import Image from "next/image";
 
+// Components
 import AddressIcon from "../ui/icons/address-icon";
 import DateIcon from "../ui/icons/date-icon";
 import LogisticsItem from "./logistics-item";
+
+// Styles
 import classes from "./event-logistics.module.css";
 
 function EventLogistics(props) {
   const { date, address, image, imageAlt } = props;
 
+  // Date Formatting
   const humanReadableDate = new Date(date).toLocaleDateString("en-US", {
     day: "numeric",
     month: "long",

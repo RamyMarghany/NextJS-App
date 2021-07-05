@@ -1,4 +1,7 @@
+// Modules
 import { useRef, useState } from "react";
+
+// Styles
 import classes from "./new-comment.module.css";
 
 function NewComment(props) {

@@ -1,4 +1,7 @@
+// Module
 import { useRef } from "react";
+
+// Styles
 import classes from "./newsletter-registration.module.css";
 
 function NewsletterRegistration() {

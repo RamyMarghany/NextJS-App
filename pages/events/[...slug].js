@@ -1,22 +1,13 @@
-import { useRouter } from "next/router";
-import { getFilteredEvents } from "../../helpers/api-util";
+// Component
 import EventsList from "../../components/events/events-list";
 import ResultsTitle from "../../components/events/results-title";
 import Button from "../../components/ui/button";
 import ErrorAlert from "../../components/ui/error-alert";
 
+// Helper
+import { getFilteredEvents } from "../../helpers/api-util";
+
 const FilteredEventsPage = (props) => {
-  // const router = useRouter();
-
-  // const filteredDate = router.query.slug;
-
-  // if (!filteredDate) {
-  //   return <p className='center'>loading...!</p>;
-  // }
-
-  // const year = +filteredDate[0];
-  // const month = +filteredDate[1];
-
   if (props.hasError) {
     return (
       <div className='center'>
@@ -53,6 +44,7 @@ const FilteredEventsPage = (props) => {
   );
 };
 
+// Small Note: with `getServerSideProps` not using `getStaticPaths` like `getStaticProps`
 export async function getServerSideProps(context) {
   const { params } = context;
 
@@ -72,10 +64,10 @@ export async function getServerSideProps(context) {
       props: {
         hasError: true,
       },
-      // notFound: true,
-      // redirect: {
-      //   destination: "/error",
-      // },
+      notFound: true,
+      redirect: {
+        destination: "/error",
+      },
     };
   }
 

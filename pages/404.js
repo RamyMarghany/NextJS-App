@@ -1,3 +1,5 @@
+// Custom error page (page not found)
+
 const NotFoundPage = () => {
   return (
     <div>

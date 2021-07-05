@@ -1,3 +1,4 @@
+// To add a custom Meta data for the whole application
 import Document, { Html, Head, Main, NextScript } from "next/document";
 
 class MyDocument extends Document {

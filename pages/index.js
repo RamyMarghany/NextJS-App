@@ -1,7 +1,12 @@
+// Modules
 import Head from "next/head";
+
+// Components
 import EventsList from "../components/events/events-list";
-import { getFeaturedEvents } from "../helpers/api-util";
 import NewsletterRegistration from "../components/input/newsletter-registration";
+
+// Helper
+import { getFeaturedEvents } from "../helpers/api-util";
 
 const HomePage = (props) => {
   return (

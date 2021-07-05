@@ -1,3 +1,4 @@
+// Styles
 import classes from "./comment-list.module.css";
 
 function CommentList(props) {

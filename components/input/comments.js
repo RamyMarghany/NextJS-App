@@ -1,7 +1,11 @@
+// Module
 import { useEffect, useState } from "react";
 
+// Components
 import CommentList from "./comment-list";
 import NewComment from "./new-comment";
+
+// Styles
 import classes from "./comments.module.css";
 
 function Comments(props) {
@@ -11,6 +15,7 @@ function Comments(props) {
   const [comments, setComments] = useState([]);
   useEffect(() => {
     if (showComments) {
+      // API Routing Connections
       fetch("/api/comments/" + eventId)
         .then((response) => response.json())
         .then((data) => {
@@ -24,6 +29,7 @@ function Comments(props) {
   }
 
   function addCommentHandler(commentData) {
+    // Saving the element in the database
     fetch(`/api/comments/${eventId}`, {
       method: "POST",
       body: JSON.stringify(commentData),

@@ -1,6 +1,9 @@
+// Module
 import Image from "next/image";
 
+// Components
 import Button from "../ui/button";
+
 // Icons
 import AddressIcon from "../ui/icons/address-icon";
 import DateIcon from "../ui/icons/date-icon";
@@ -8,6 +11,7 @@ import classes from "./event-item.module.css";
 
 const EventItem = (props) => {
   const { title, image, date, location, id } = props;
+
   // Date Formatting
   const readableDate = new Date(date).toLocaleDateString("en-US", {
     day: "numeric",

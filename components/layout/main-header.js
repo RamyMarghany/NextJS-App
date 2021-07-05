@@ -1,5 +1,7 @@
+// Module
 import Link from "next/link";
 
+// Style
 import classes from "./main-header.module.css";
 
 const MainHeader = () => {

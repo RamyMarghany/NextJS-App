@@ -37,6 +37,8 @@ const Event = (props) => {
 export async function getStaticProps(context) {
   const eventId = context.params.eventId;
   const selectedEvent = await getEventById(eventId);
+
+  // `getStaticProps` should always return a props objects that passed to the component
   return {
     props: {
       event: selectedEvent,
@@ -50,8 +52,14 @@ export async function getStaticPaths() {
   const events = await getFeaturedEvents();
   const paths = events.map((event) => ({ params: { eventId: event.id } }));
 
+  // `getStaticPaths` should always return a props objects with a params object => return{ props: { params:{.....}}}
   return {
     paths: paths,
+
+    // there are three values for the fallback (false, true, and blocking)
+    // false: no more instances in the represented array to render.
+    // true: there are more instance to pre-generate on the fly but it will provide a blank page till get the data.
+    // blocking: there are more instance to pre-generate on the fly but it will prevent display anything till the whole data content returned.
     fallback: "blocking",
   };
 }

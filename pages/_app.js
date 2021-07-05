@@ -1,6 +1,11 @@
+// Module
 import Head from "next/head";
-import "../styles/globals.css";
+
+// Components
 import Layout from "../components/layout/layout";
+
+// Styles
+import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
   return (

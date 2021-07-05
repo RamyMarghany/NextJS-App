@@ -1,8 +1,11 @@
 // Modules
 import { useRouter } from "next/router";
 
+// Components
 import EventsList from "../../components/events/events-list";
 import EventsSearch from "../../components/events/events-search";
+
+// Helper
 import { getAllEvents } from "../../helpers/api-util";
 
 const AllEventsPage = (props) => {
